@@ -1,7 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { signIn } from '../services/firebase';
 import { createUser } from '../services/firebase';
 
 export function CreateAccount() {
@@ -10,16 +9,15 @@ export function CreateAccount() {
   const nav = useNavigate();
 
   function handleLogin(e: FormEvent) {
-    //não fazer o comportamento padrão
     e.preventDefault();
-    signIn(usuario, senha)
+    createUser(usuario, senha)
       .then(() => {
-        alert('Conta criada! Agora você pode fazer login');
+        alert('Conta criada! Agora você pode fazer login!');
         nav('/login');
       })
       .catch((error) => {
         console.log(error);
-        alert('Não foi possível criar sua conta' + error.message);
+        alert('Não foi possível criar sua conta! ' + error.message);
       });
   }
 
@@ -39,12 +37,12 @@ export function CreateAccount() {
           />
         </div>
         <div>
-          <button type="submit">Acessar</button>
+          <button type="submit">Criar minha conta</button>
         </div>
         <div>
           Já tem conta?
           <Link to="/login">
-            <button> Que tal fazer login! </button>
+            <button>Que tal fazer login!</button>
           </Link>
         </div>
       </form>
