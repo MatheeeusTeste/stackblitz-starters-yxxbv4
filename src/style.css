@@ -1,4 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@400;500&display=swap');
+
+html {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(146, 152, 240, 1) 46%,
+    rgba(78, 105, 255, 1) 100%
+  );
+}
 h1,
 p {
-  font-family: Lato;
+  font-family: 'Inter', sans-serif;
+
+  min-height: 100%;
+}
+.box-login {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 5px 15px -10px;
+  border: 1px solid white;
+  max-width: 200px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.box-login h1 {
+  margin: 1rem;
+}
+.box-login input {
+  width: 100%;
+}
+.box-login button{
+  display: block;
+  width: 100%;
+  margin: 0.25rem;
+  padding: 0,25rem;
+  background-color: #ddd;
+  border: none;
+}
+
+.box-login button[type='submit']{
+  background-color: blue;
+  color: white;
+}
+.box-login button[type='submit']:hover{
+  background-color: rgb(128, 147, 215);
 }
