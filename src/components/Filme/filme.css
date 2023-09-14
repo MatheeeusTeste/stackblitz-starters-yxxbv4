@@ -30,4 +30,17 @@
   color: #333;
 }
 
-
+.filme small{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000055;
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  backdrop-filter: blur(10px);
+}
