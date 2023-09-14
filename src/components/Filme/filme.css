@@ -1,0 +1,33 @@
+
+.Filme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.Filme:hover {
+  transform: translateY(-5px);
+}
+
+.Filme img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.Filme div {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+
+
