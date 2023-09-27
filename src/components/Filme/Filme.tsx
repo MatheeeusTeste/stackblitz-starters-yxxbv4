@@ -1,6 +1,10 @@
 import './filme.css';
 
+import { db, addItem } from '../../services/firebase';
+
+
 export interface FilmeInterface {
+  id: String
   original_title: string;
   release_date: string;
   poster_path: string;
@@ -13,7 +17,14 @@ export interface FilmeProps {
 
 export function Filme({ filme }: FilmeProps) {
   function handleSaveMovie() {
-    alert('Filme salvo: ' + filme.original_title);
+    console.log(filme);
+    addItem('movies', String(filme.id), filme)
+     .then(result => {
+      alert('Filme salvo: ' + filme.original_title);
+    })
+    .catch(error => {
+      console.error(error);
+    });
   }
 
   return (

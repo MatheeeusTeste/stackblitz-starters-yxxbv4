@@ -1,6 +1,17 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  updateDoc,
+  deleteDoc,
+  getDocs,
+  collection,
+  query,
+  where,
+  Onsanpshot,
+} from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import {
   signInWithEmailAndPassword,
@@ -32,4 +43,10 @@ export function signIn(usuario: string, senha: string) {
 }
 export function createUser(usuario: string, senha: string) {
   return createUserWithEmailAndPassword(auth, usuario, senha);
+}
+
+
+export function addItem(colecao: string, document: string, data: unknown) {
+  const docRef = doc(db, colecao, document);
+  return setDoc(docRef, data);
 }
